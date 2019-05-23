@@ -9,7 +9,7 @@
 -- Project Name: 	For ENEL373 course on digital logic
 -- Target Devices: Any
 -- Tool versions:  Any
--- Description:   This clock divider will take a 100MHz clock and divide it down to 1Hz
+-- Description:   This clock divider will take a 100MHz clock and divide it down to 50Hz
 --
 -- Dependencies: 
 --
@@ -50,7 +50,7 @@ begin
 
 		begin
 		if Clk_in = '1' and Clk_in'Event then
-		  if clk_ctr = clk_limit then				-- if counter == (1Hz count)/2
+		  if clk_ctr = clk_limit then				-- if counter == (Hz count)/2
 		  	 temp_clk <= not temp_clk;				--  toggle clock
 			 clk_ctr <= X"0000000";					--  reset counter
 		  else											-- else
